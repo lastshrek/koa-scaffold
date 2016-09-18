@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .container-fluid
+    #main
+      h3 ValkyRie
+      .upload
+        i.fa.fa-cloud-upload.fa-lg
+        h6 可以拖拽文件至虚线内或
+        .sel
+          a.file.btn.btn-inverse 选择文件
+          input#fileToUpload(type='file', onchange='fileSelected()', accept='.csv')
+        .commit
+          button.btn.btn-primary.ladda-button#submit(disabled = 'disabled', data-style='expand-left', onclick='uploadFile()')
+            span.ladda-label 上传文件
+            span.ladda-spinner
+            span.ladda-spinner
+            .ladda-progress
+      #fileName 文件名称：
+      #fileSize 文件大小：
+      #fileType 文件类型：
